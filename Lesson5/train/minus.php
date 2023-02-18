@@ -11,6 +11,6 @@ $b = 3;
 <body>
     <h1>Вычитание</h1>
     <p>5 - 3 = <?=$a - $b?></p>
-    <a href="/">Назад
+    <a href="/PHP_Lessons/Lesson5/train/index.php">Назад
 </body>
 </html>

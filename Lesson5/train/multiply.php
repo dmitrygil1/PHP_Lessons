@@ -12,6 +12,6 @@ $result = $a + $b;
 <body>
     <h1>Умножение</h1>
     <p>5 * 3 = <?=$result?></p>
-    <a href="/">Назад
+    <a href="/PHP_Lessons/Lesson5/train/index.php">Назад
 </body>
 </html>

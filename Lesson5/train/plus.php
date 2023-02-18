@@ -7,6 +7,6 @@
 <body>
     <h1>Сложение</h1>
     <p>5 + 3 = <?=5 + 3?></p>
-    <a href="/">Назад</a>
+    <a href="/PHP_Lessons/Lesson5/train/index.php">Назад</a>
 </body>
 </html>

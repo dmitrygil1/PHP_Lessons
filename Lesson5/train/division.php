@@ -12,6 +12,6 @@ $result = $a / $b;
 <body>
     <h1>Деление</h1>
     <p>5 / 3 = <?=number_format($result, '2', '.', '')?></p>
-    <a href="/">Назад
+    <a href="/PHP_Lessons/Lesson5/train/index.php">Назад
 </body>
 </html>
