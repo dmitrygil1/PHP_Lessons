@@ -42,7 +42,7 @@ var_dump('Первое число:'.$number1 .', Второе число:'. $num
 var_dump($number1 + $number2);
 var_dump($number1 - $number2);
 var_dump($number1 * $number2);
-var_dump($number1 / $number2);
+var_dump($number1 / $number2);!
 
 var_dump($number1 > $number2);
 var_dump($number1 < $number2);
