@@ -1,0 +1,38 @@
+p, .grey {
+    background-color: #eeeeee;
+}
+
+#paragraph {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+[data-color="blue"] {
+    background-color: blue;
+}
+
+.white {
+    color: white;
+}
+
+div.red {
+    background-color: pink;
+}
+
+.grey.white {
+    color: black;
+}
+
+.menu a {
+    font-size: 24px;
+    background-color: grey;
+    color: white;
+}
+
+
+.menu > a {
+    text-decoration: none;
+}

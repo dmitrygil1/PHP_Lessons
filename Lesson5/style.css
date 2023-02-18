@@ -1,0 +1,19 @@
+p {}
+div {}
+
+#first {}
+#person {}
+
+.title {}
+.product-item {}
+
+[type=text] {}
+[attr1="value1"] {}
+
+p.red {}
+.item.first {}
+input[type=text] {}
+
+ul li p {}
+.items .item {}
+div > span {}
