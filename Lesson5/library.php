@@ -64,20 +64,42 @@ $library = [
 $title = 'Библиотека программиста';
 
 $red = (bool) rand(0, 1);
+//условие--------------------------------------------------------------------
 
+//решение по условию---------------------------------------------------------
+if ($red === true) {
+    $redColor = '{color: red;}';
+}
+
+$numOfAuthors = (count($library['authors']));
+//---------------------------------------------------------------------------
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Выведите сюда заголовок страницы</title>
-    <style type="text/css">.red {color: red;}</style>
+    <title><?php echo ($title) ?></title>
+    <style type="text/css">body {margin: 0 40px}.book {font-size: 16px; margin-bottom: 20px} .book-grey {background-color: #dddddd} .red <?php echo $redColor?>; </style>
 </head>
 <body>
-<h1>Выведите сюда заголовок страницы</h1>
-<div>Авторов на портале <Укажите количество авторов></div>
-<!-- Выведите все книги -->
-<p>Книга <Название книги>, ее написал <Фио автора> <Год рождения автора> (<email автора>)</p>
+<h1 class="red"><?php echo ($title) ?></h1>
+<div>Авторов на портале: <?php echo ($numOfAuthors) ?></div>
 
+<!-- Выведите все книги -->
+<?php
+for ($i = 0; $i <= $numOfAuthors; $i++) {
+    $bookName = $library['books'][$i]['title'];
+    $authorKey = $library['books'][$i]['author'];
+    $email = $library['authors'][$authorKey]['email'];
+    $class = 'class="book"';
+    if ($i % 2 == 0) {
+        $class = 'class="book book-grey"';
+    };
+    echo ('<p '."$class".'> Книга <strong>"'.$bookName.'"</strong>, её написал '.
+        $library['authors'][$authorKey]['name'].' '.
+        $library['authors'][$authorKey]['birthYear'].' года рождения, для связи используйте почту: <a href="'."mailto: $email".'">'.$email.'</a></p>');
+    };
+?>
 </body>
 </html>
