@@ -55,6 +55,6 @@ img - строчный элемент, основной атрибут src - url
 
 <hr>
 script может быть подключен и в теге head, атрибут type - указывает тип скрипта, src - указывает путь откуда будет подгружен скрипт
-<script type="text/javascript" src=".."></script>
+<script type="text/javascript" src="../.."></script>
 </body>
 </html>
