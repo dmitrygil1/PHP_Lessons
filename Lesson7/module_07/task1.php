@@ -1,6 +1,6 @@
 <?php
 // Подключите ядро проекта
-
+require_once $_SERVER['DOCUMENT_ROOT']."/PHP_Lessons/Lesson7/module_07/app/core.php";
 ?>
 <!doctype html>
 <html>
@@ -14,14 +14,14 @@
 
 <?php
 //  Подключите здесь блок с навигацией
-
+include_once $_SERVER['DOCUMENT_ROOT']."/PHP_Lessons/Lesson7/module_07/templates/navigation.php";
 ?>
 
 <div class="container shadow-lg mx-auto bg-white mt-24 md:mt-14 h-screen p-10">
 
 <?php 
 // Разместите здесь решение задачи
-
+include_once $_SERVER['DOCUMENT_ROOT']."/PHP_Lessons/Lesson7/module_07/templates/task_1_content.php";
 ?>
 
 </div>

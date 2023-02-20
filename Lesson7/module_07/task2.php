@@ -1,6 +1,6 @@
 <?php
 // Подключите ядро проекта
-
+require_once $_SERVER['DOCUMENT_ROOT']."/PHP_Lessons/Lesson7/module_07/app/core.php";
 ?>
 <!doctype html>
 <html>
@@ -14,14 +14,18 @@
 
 <?php
 //  Подключите здесь блок с навигацией
-
+include $_SERVER['DOCUMENT_ROOT']."/PHP_Lessons/Lesson7/module_07/templates/navigation.php";
 ?>
 
 <div class="container shadow-lg mx-auto bg-white mt-24 md:mt-14 h-screen p-10">
 
 <?php 
 // Разместите здесь решение задачи
-
+if ($isAuthorized == true) {
+    include $_SERVER['DOCUMENT_ROOT']."/PHP_Lessons/Lesson7/module_07/templates/task_2_welcome_message.php";
+} else {
+    include $_SERVER['DOCUMENT_ROOT']."/PHP_Lessons/Lesson7/module_07/templates/task_2_auth_form.php";
+};
 ?>
 
 </div>
