@@ -45,33 +45,48 @@ $library = [
 
 
 // 1. Используя подходящую встроенную функцию, извлеките из массива и выведите первого автора в библиотеке
-// $firstAuthor = ...;
+
+$firstAuthor =array_shift($library ['authors']);
 var_dump($firstAuthor);
 
 
 // 2. Используя подходящую встроенную функцию, выберите и выведите последнюю книгу
-// $lastBook = ...;
+$lastBook = array_pop($library ['books']);;
 var_dump($lastBook);
 
 
 // 3. Используя подходящую встроенную функцию, получите массив содержащий список email всех авторов
 $emails = [];
-
+$emails = array_keys($library['authors']);
+var_dump($emails);
 
 // 3. Используя подходящую встроенную функцию, определите, есть ли среди этих email 'martin_fauler@example.com'
 $hasMartinFauler = false;
+$hasMartinFauler =in_array("martin_fauler@example.com",$emails);
+
 var_dump($hasMartinFauler);
 
 
 // 4. Используя подходящую встроенную функцию, определите, есть ли среди этих email 'vasya@example.com'
 $hasVasyaPupkin = false;
+$hasMartinFauler =in_array("vasya@example.com",$emails);
 var_dump($hasVasyaPupkin);
 
 
 // 5. Используя подходящую встроенную функцию, добавьте в библиотеку еще одну книгу Мартина Фаулера
+array_push($library['books'], [
+    'title' => 'Добавочные данные',
+    'author' => 'martin_fauler@example.com',
+    'year' => 2012,
+]);
 var_dump($library);
 
 
 // 6. Используя подходящую встроенную функцию, добавьте в библиотеку на первую полку еще одну книгу Мартина Фаулера
+array_unshift($library['books'], [
+    'title' => 'На первой полке',
+    'author' => 'martin_fauler@example.com',
+    'year' => 2001,
+]);
 var_dump($library);
 

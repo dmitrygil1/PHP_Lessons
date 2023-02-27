@@ -6,7 +6,7 @@ $myStr = "Hello, functions!";
 
 strlen($myStr);//17 = Функция измерения длинны строки
 
-$arr = explode(' ', $myStr); //ункция для разделения по разделителю (как в excel)
+$arr = explode(' ', $myStr); //функция для разделения по разделителю (как в excel)
 
 var_dump($arr); // [ "Hello," , "functions!" ] - уже как массив из двух строк
 var_dump(implode('*', $arr));// Hello,*functions! - объединяет массив в строку
