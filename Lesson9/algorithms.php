@@ -79,3 +79,23 @@ while ($value>0){
     $value = (int) ($value/10);
 }
 var_export($count);//будет работать только для коротких чисел из-за особенностей хранения (int): если число длинное - оно преобр. в float
+
+
+//4. Циклический сдвиг слова = " С Е Л О " => " О С Е Л " (буква с конца переехала в начало)
+
+$word = 'Hello Word';
+
+var_dump($word);
+
+$letter = substr($word, strlen($word)-1,1); //Перебрасываем последнюю букву вперед
+$word = $letter . substr ($word, 0, strlen($word)-1); //Удаляем последнюю букву
+var_dump($word);
+
+//5. Аналогичная задача для массива
+
+$data = [1,2,3,4];
+
+$lastitem = array_pop($data);
+array_unshift($data,$lastitem);
+
+var_dump($data);//[4,1,2,3]
