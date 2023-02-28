@@ -127,3 +127,46 @@ foreach ($matrix as $line) {
     }
 }
 var_dump($sum);
+
+
+//8. Пузырьковая сортировка (самая простая для понимания, но самая тяжелая в плане ресурсов)
+$data = [];
+for ($i = 0; $i<10;$i++) {
+    $data[] = rand (0,9);
+}
+echo implode(' ',$data).'<br>';
+
+for ($i = 0; $i < count ($data); $i++ ) {
+    for ($j = 0; $j < count ($data) ; $j++) {
+        if ($data[$j] > $data[$i]) {
+            $tmp = $data[$j];
+            $data[$j] = $data[$i];
+            $data[$i] = $tmp;
+        }
+    }
+}
+
+echo 'Пузырьковая сортировка:'.implode(' ',$data).'<br>';//сортированный массив
+
+
+//9. Сортировка методом минимума и максимума (минимумы в начало, максимумы в конец)
+
+$data = [];
+for ($i = 0; $i<10;$i++) {
+    $data[] = rand (0,9);
+}
+echo implode(' ',$data).'<br>';
+
+for ($i = 0; $i < count ($data) - 1; $i++ ) {
+    $k = $i;
+
+    for ($j = $i +1; $j < count ($data) ; $j++) {
+        if ($data[$k] > $data[$j]) {
+            $tmp = $data[$j];
+            $data[$j] = $data[$k];
+            $data[$k] = $tmp;
+        }
+    }
+}
+
+echo 'Сортировка мин/макс: '.implode(' ',$data).'<br>';//сортированный массив
