@@ -99,3 +99,31 @@ $lastitem = array_pop($data);
 array_unshift($data,$lastitem);
 
 var_dump($data);//[4,1,2,3]
+
+
+//6. Нахождение максимального числа в массиве
+//Для php можно использовать max($massiv)
+
+
+//7. Сумма элементов в матрице 3x3, элементы рандомные
+$matrix = [];
+$size =3;
+
+for ($i = 0; $i < $size; $i++) {
+    for ($j = 0;$j < $size; $j++){
+        $matrix[$i][$j] = rand (0,9);
+    }
+}
+
+//Приведем матрицу в адекватный вид
+foreach ($matrix as $line) {
+    echo implode(' ',$line) . '<br>';
+}
+
+$sum = 0;
+foreach ($matrix as $line) {
+    foreach ($line as $number) {
+        $sum += $number;
+    }
+}
+var_dump($sum);
