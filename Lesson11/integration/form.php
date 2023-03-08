@@ -36,7 +36,7 @@ if (! empty($_POST)) {
         <div class="container">
             <ul>
                 <li><a href="index.php">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
+                <li><a href="./about/about.html">О нас</a></li>
             </ul>
         </div>
     </div>
