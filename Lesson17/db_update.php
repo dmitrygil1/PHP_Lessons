@@ -18,10 +18,10 @@ if (mysqli_connect_errno()){
         //"update products set price='550' where id='10'"
         "update products set price=price + '15' order by price asc limit 2"
     );
-    //"update products set price=5000");
-    //"select * from products");
-
-    //проверка
+//    "update products set price=5000");
+//    "select * from products");
+//
+//    проверка
     var_export($result);
 
 //    while ($row = mysqli_fetch_assoc($result)) {
