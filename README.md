@@ -5,4 +5,4 @@
 This repository will serve as a warehouse for lessons and homework on PHP development, the training plan is described in more detail in the miro-board and can be issued on demand.
 These files are only fixing educational practical tasks and do not claim to be outstanding, or indeed any projects, but serve only to consolidate basic knowledge of PHP. After all, repetition, as you know...
 
-![Оглавление по урокам](https://user-images.githubusercontent.com/91392061/228938485-741d5b93-b296-4fed-91ca-a9f9e8408f8a.png)
+![Оглавление по урокам](https://user-images.githubusercontent.com/91392061/230003070-d1910b64-5275-46b3-a1d3-47be0e844f3e.png)
