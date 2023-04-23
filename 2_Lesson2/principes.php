@@ -119,3 +119,163 @@ $divider->setDivideTo(0);
 echo $divider->divide();
 
 //Таким образом мы скрыли реализацию DivideTo от пользователя и private function getDivideTo() от др. классов
+
+
+
+//-------------Наследование-------------//
+/* А также parrent и self
+ *
+ * Наследование - возможность описать новый класс на основе уже существующего
+ * цель - использование функционала базового класса полностью или частично без его написания снова
+ * а также возможность эту функциональность переопределить если нужно 
+ * */
+
+class Pet
+{
+    public function walk()
+    {
+        echo 'Топ-топ-топ'. PHP_EOL;
+    }
+
+    public function sleep()
+    {
+        echo 'ZzzZZZzzzZZZZ'. PHP_EOL;
+    }
+    
+    public function say()
+    {
+        //неизвестно что говорит абстарктное животное, поэтому пусто
+    }
+}
+
+class Cat extends Pet
+{
+    public function say()//переопределяем метод say в дочернем классе
+    {
+        echo 'Мяу'. PHP_EOL;//задаем то, что делает дочерний класс т.к. мы уже знаем что он делает
+    }
+
+    public function catchMouse()
+    {
+        echo 'Кот ловит мышку...'.PHP_EOL;
+    }
+}
+
+class Dog extends Pet
+{
+    public function say()
+    {
+        echo 'Гав-гав'. PHP_EOL;
+    }
+}
+
+class Horse extends Pet
+{
+    public function walk()
+    {
+        echo 'Тыгыдык-тыгыдык'.PHP_EOL;
+    }
+
+    public function say()
+    {
+        echo 'Иго-го'. PHP_EOL;
+    }
+}
+
+$cat = new Cat();
+$dog = new Dog();
+$horse = new Horse();
+
+//$cat->walk();
+//$cat->say();//мяу
+//$cat->sleep();
+//$cat->catchMouse();//Кот ловит мышку - новая функция для дочернего класса. В родительском такого нет, как и в других.
+
+//$dog->walk();
+//$dog->say();//Гав-гав
+//$dog->sleep();
+
+//$horse->walk();//Тыгидык-тыгидык
+//$horse->say();//Иго-го
+//$horse->sleep();
+
+class Tiger extends TalkativeCat//получилась вложенность: базовый -< дочерний(кот) -> дочерний(тигр)
+{
+    public function say()
+    {
+        echo 'Ррррр'.PHP_EOL;
+    }
+
+    public function catchMouse()
+    {
+        echo 'Тигр ловит мышку...'.PHP_EOL;
+    }
+
+    public function walk()
+    {
+        self::say();//Пример отличия self от this - this указывает на объект, self - на текущий класс
+        //а т.к. в нашем случае say мы берем из talkativeKat - для данного действия say будет как у talkativeKat
+        parent::walk();
+    }
+}
+$tiger = new Tiger;
+
+$tiger->walk();
+$tiger->say();//Ррррр
+$tiger->sleep();
+$tiger->catchMouse();//и тигр также ловит мышку
+
+//Однако есть ограничение: нельзя наследоваться от нескольких классов (в PHP запрещено множественное наследование)
+
+
+//Также часто нужно обратится к методам родительского класса, для этого используют parent:
+
+class TalkativeCat extends Cat
+{
+    public function walk()
+    {
+        $this->say();//для этого класса будет вызвана сначала say
+        parent::walk(); //а затем собственно walk будет вызван из родительского класса
+    }
+
+    public function sleep()
+    {
+        $this->say();//аналогично
+        parent::sleep();
+    }
+}
+
+$talkativeCat = new TalkativeCat();
+
+$talkativeCat->walk();//мяу + топ-топ-топ, где мяу как-бы этого класса, а walk - родительского
+$talkativeCat->sleep();//мяу + zzzZZZZzzzZZZ
+
+//Также self. Он указывает на текущий класс. Очень похож на $this
+
+
+
+//---------Полиморфизм---------//
+
+//Полиморфизм - возможность системы использовать разные объекты с разной реализацией, но
+//одинаковой спецификацией
+//Пример - первый вариант про столовую
+//Также для понимания:
+
+class Printer
+{
+    public function print()
+    {
+        //какая-то логика...
+    }
+}
+
+class SomePrinter extends Printer {}
+class OtherPrinter extends Printer {}
+
+function goPrint(Printer $printer)
+{
+    $printer->print();
+}
+
+goPrint(new SomePrinter());
+goPrint(new OtherPrinter());//Вот явный пример полиморфизма - не важно какой экземпляр, они все умеют в print()
